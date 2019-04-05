@@ -34,7 +34,7 @@ breaklines}
     \begin{center}\large#1\end{center}
     \vskip0.5em}%
 }
-
+\usepackage[english]{babel}
 \begin{document}
 
 \title{Web Science Exam 2019}
@@ -79,7 +79,7 @@ In our case here it can make sense to use both ways for making recommendations:
 	\item Collaborative filtering: lots of others People also watched similar movies and recommend according to that.
 \end{itemize}
 So in the end we could try to profit from both methods to end up on even better recommendations for the user.
-Performance wise I can't really give a very satisfying answer since I can test the content based recommendations only to direct responses (which gives similar movies back), for collaborative filtering
+Performance wise I can't really give a very satisfying answer since I can test the content based recommendations only to direct responses (which gives similar movies back), for collaborative filtering on the other hand works quite well.
 
 \subsection{Question 4}
 A possible solution to that would be just the movies which have the highest ratings, or movies which have been rated highly by the most people.
@@ -104,7 +104,7 @@ This way I can reduce tokens which would be useless (HTML tags, punctuations), a
 
 
 \subsection{Task 2}
-I tried a few classifiers but in the end I decided to go with \texttt{MultinomialNB}(Multinominal Naive Basis), which is a very basic Classification algorithm but has a good enough accuracy for this task in my opinion.
+I tried a few classifiers but in the end I decided to go with \texttt{MultinomialNB} (Multinominal Naive Basis), which is a very basic Classification algorithm but has a good enough accuracy for this task in my opinion.
 I also wanted to train a \texttt{RandomForrest} Model but that just took forever, so I ended up with a Naive Basis model.
 On the Naive Basis classifier I also run a \texttt{GridSearchCV} on my classifier to try to improve my parameters a little to get a better accuracy, even though in the end it's only a marginal improvement.
 
