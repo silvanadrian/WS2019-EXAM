@@ -1,0 +1,9 @@
+Code is all in jupyter notebooks, there are only the requirements needed descriped in requirement.txt.
+
+To install them please run, pip3 install -r requirements.txt
+
+After the installation the code should be able to be run.
+
+Data is not included, but all the data get read from a data folder.
+
+One special thing is lime, which creates html pages into a lime folder.

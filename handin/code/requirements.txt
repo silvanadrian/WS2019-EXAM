@@ -1,0 +1,6 @@
+pandas
+surprise
+sklearn
+numpy
+nltk
+lime
