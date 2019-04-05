@@ -1,10 +1,16 @@
 \contentsline {section}{\numberline {1}WWW as a network and challenges}{1}
-\contentsline {section}{\numberline {2}Recommender systems}{1}
+\contentsline {section}{\numberline {2}Recommender systems}{2}
 \contentsline {subsection}{\numberline {2.1}Question 1}{2}
 \contentsline {subsection}{\numberline {2.2}Question 2}{2}
 \contentsline {subsection}{\numberline {2.3}Question 3}{2}
 \contentsline {subsection}{\numberline {2.4}Question 4}{2}
+\contentsline {subsection}{\numberline {2.5}Question 5}{2}
 \contentsline {section}{\numberline {3}Sentiment and data mining}{2}
 \contentsline {subsection}{\numberline {3.1}Task 1}{2}
-\contentsline {subsection}{\numberline {3.2}Task 2}{2}
-\contentsline {subsection}{\numberline {3.3}Task 3}{2}
+\contentsline {subsection}{\numberline {3.2}Task 2}{3}
+\contentsline {subsection}{\numberline {3.3}Task 3}{3}
+\contentsline {subsubsection}{\numberline {3.3.1}Review 1}{4}
+\contentsline {subsubsection}{\numberline {3.3.2}Review 2}{5}
+\contentsline {subsubsection}{\numberline {3.3.3}Review 3}{6}
+\contentsline {subsubsection}{\numberline {3.3.4}Review 4}{7}
+\contentsline {subsubsection}{\numberline {3.3.5}Review 5}{8}

@@ -2,6 +2,7 @@
 \usepackage{tabularx}
 \usepackage{ltablex}
 \usepackage{graphicx}
+\usepackage{tabularx}
 \usepackage[cache=false]{minted}
 \setminted[erlang]{
 frame=lines,
@@ -10,7 +11,7 @@ baselinestretch=1.1,
 fontsize=\footnotesize,
 linenos,
 breaklines}
-\setminted[haskell]{
+\setminted[python]{
 frame=lines,
 framesep=2mm,
 baselinestretch=1.1,
@@ -47,30 +48,68 @@ breaklines}
 \section{WWW as a network and challenges}
 
 Since the world wide web is a very big collection of data there will be lots of problems with duplications or even spamming (wrong information).
-Also the data on the web can pretty much change at any time which makes it hard to keep up with all changes.
-Also the format is a problem, which needs to be taken care of, mostly HTML websites which then have to be processed that really only the important content is left.
+Also the data on the web can pretty much change at any time which makes it hard to keep up with all changes. 
+The format is also a problem, which needs to be taken care of, mostly HTML which then has to be processed that really only the important content is left.
 
 
 \section{Recommender systems}
-User/Item Based
-
-Content Based
 
 \subsection{Question 1}
+I used the \texttt{surprise} library for the collaborative filtering part.
+In the code I decided to use \texttt{SVD} for building a recommendation model + KNN as a comparison to it and calculated the RMSE according to it.
+I also thought of implementing both item/user based approach as well but left it then since the Matrix factorization approach seemed good enough of an example.
 
 \subsection{Question 2}
+I ended up using \texttt{n-grams=3} (for genres), so recommendations will be done according to the
 
 \subsection{Question 3}
 
 \subsection{Question 4}
+A possible solution to that would be just the movies which have the highest ratings, or movies which have been rated highly by the most people.
+Since if the majority likes the movies then with some probability also the new user will like them.
+But in this case there is not much information to get from our dataset, so either the user would need to provide some information (favourite movie, genres he likes), or we can only give recommendations according to what the majority likes or thinks is a good movie.
+Or we could even go as far as just getting randomized movies (a sample), from which maybe any is a movie the user actually likes, and then start from there and take into account what kind of movies he is actually watching.
+
+\subsection{Question 5}
+
+The collaborative filtering solution is in my opinion also ok for bigger datasets since I build a model which then can be reused for as much data as needed (can of course also be retrained with more data).
+The content recommender on the other hand needs to calculate TF-IDF vectors before calculating the cosinus simularity between all the movies according to genre, which isn't too great if it keeps needing to recalculate it.
+So here would be model based approach much better then the memory based approach.
+
 
 \section{Sentiment and data mining}
 
 \subsection{Task 1}
+As far as I understood the task I created the tokes by using the \texttt{CountVectorizer} with n-gram=2 to create all the bi-grams for each review.
+Additionally to that I then Transformed those tokens into TF-IDF (which tells me the term frequency etc.) which I then used to train my model.
+I preprocess the reviews with stemming, removing stop words, lower all texts and especially remove HTML tags ($<br /> ->$ new lines).
+This way I can reduce for once tokens which would be useless (HTML tags, punctuations), as well as with stemmed words I hope to find find better matches (reducing to word stem), which should end in better predictions in the end.
+
 
 \subsection{Task 2}
+I tried a few classifiers but in the end I decided to go with \texttt{MultinomialNB}(Multinominal Naive Basis), which is a very basic Classification but has a good enough accuracy for this task in my opinion.
+I also wanted to train a \texttt{RandomForrest} Model but that just took forever, so I ended up with a Naive Basis model.
+On the Naive Basis classifier I also run a \texttt{GridSearchCV} on my classifier to try to improve my parameters a little to get a better accuracy, even though in the end it's only a marginal improvement.
+
+
 
 \subsection{Task 3}
+
+For this task I used the library \texttt{lime} to help me, because it visualizes very nicely why a review has been wrongly classified according to which words.
+For that I chose 5 randomly not rightly classified reviews out of the test data.
+
+So for the classes \mintinline{python}{{'positive': 1, 'negative' 0}} I get the following false classified reviews:
+
+\input{reviews/review_1}
+
+\input{reviews/review_2}
+
+\input{reviews/review_3}
+
+\input{reviews/review_4}
+
+\input{reviews/review_5}
+
 
 
 
